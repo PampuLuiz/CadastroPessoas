@@ -3,10 +3,11 @@ CREATE TABLE Pessoa (
     Nome VARCHAR(255),
     Email VARCHAR(255),
     DataNascimento DATE,
+    QuantidadeDependentes INT,
     PRIMARY KEY(idPessoa)
 );
 
-CREATE TABLE Dependentes(
+CREATE TABLE Dependente(
 	idDependente INT AUTO_INCREMENT,
     Nome VARCHAR(255),
     DataNascimento DATE,
