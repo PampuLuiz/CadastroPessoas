@@ -40,6 +40,3 @@ require_once("mostra-alerta.php")
       </ul>
     </div>
   </nav>
-
-  <?php  mostraAlerta("success"); ?>
-			<?php mostraAlerta("danger"); ?>

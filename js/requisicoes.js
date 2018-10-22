@@ -12,15 +12,13 @@ $(document).ready(function () {
 });
 
 function CadastraPessoa() {
-    var dados = $('#cadastrar-pessoa').serialize();
 
-    $.ajax({
-        type: 'POST',
-        dataType: 'json',
-        url: 'adciona-pessoa.php',
-        async: true,
-        data: dados
-    }).done(function () {
-        location.replace("http://localhost/teste-it4acio/listar-pessoas.php")
+    var dados = $('#cadastrar-pessoa').serialize();
+    
+    $.post("adciona-pessoa.php", dados, function () {
+        $('#cadastrar-pessoa').each(function () {
+            this.reset();
+            $("#alerta").attr('class', 'alert alert-success rounded').text("Pessoa cadastrada").fadeIn(0).delay(3000).fadeOut(3000);
+        });
     });
 }

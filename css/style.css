@@ -1,3 +1,9 @@
 .lista-pessoas{
     padding-top: 2em;
 }
+#alerta{
+    margin-top: 2em;
+    width: 15em;
+    border: 0.2em solid #7de495;
+    display:none;
+}

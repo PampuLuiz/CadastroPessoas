@@ -11,13 +11,9 @@ $pessoa = new Pessoa("", "", "", 0);
           <button class="btn btn-primary" id="btn-salvar-pessoa" type="submit">Cadastrar</button>
         </div>
     </form>
+    <div id="alerta" class="container"></div>
   </div>
 </section>
-<?php/*
-$nome = isset($_POST['nome']) ? $_POST['nome'] : '';
-$email = isset($_POST['email']) ? $_POST['email'] : '' ;
-$dtNascimento = isset($_POST['dtNascimento']) ? $_POST['dtNascimento'] : '';
-
-$pessoa = new Pessoa($nome, $email, $dtNascimento, 0);
-*/
-require_once("rodape.php");?>
+<?php 
+require_once("rodape.php");
+?>
