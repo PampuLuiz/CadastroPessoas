@@ -1,3 +1,5 @@
+CREATE DATABASE cadastro_pessoas;
+
 CREATE TABLE Pessoa (
     idPessoa INT AUTO_INCREMENT,
     Nome VARCHAR(255),
