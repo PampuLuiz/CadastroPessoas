@@ -11,12 +11,6 @@ $relacao = $_POST['relacao'];
 
 $dependente = new Dependente($idPessoa, $nome, $dtNascimento, $relacao);
 
-if(adcionaDependente($conexao, $dependente ,$idPessoa)) { 
-	$_SESSION["succecss"] = "Dependente cadastrado";
-} else {
-	$msg = mysqli_error($conexao);
-	$_SESSION["danger"] = "Dependente não cadastrado ".$msg;
-}
-header("Location: cadastro-dependentes.php?idPessoa={$idPessoa}");
+adcionaDependente($conexao, $dependente ,$idPessoa);
 die();
 ?>

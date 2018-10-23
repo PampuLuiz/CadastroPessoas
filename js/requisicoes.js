@@ -9,16 +9,44 @@ $(document).ready(function () {
         }
     });
 
+    $('#btn-salvar-dependente').click(function (e) {
+        e.preventDefault();
+        // if ($('#nome').val() == '' || $('#dtNascimento').val() == '' || $('#dtNascimento').val() == '') {
+        //     alert("Todos campos devem ser preenchidos");
+        // } else {
+            CadastraDependente();
+            window.location.reload();
+    });
+
 });
 
 function CadastraPessoa() {
 
     var dados = $('#cadastrar-pessoa').serialize();
-    
+
     $.post("adciona-pessoa.php", dados, function () {
         $('#cadastrar-pessoa').each(function () {
             this.reset();
-            $("#alerta").attr('class', 'alert alert-success rounded').text("Pessoa cadastrada").fadeIn(0).delay(3000).fadeOut(3000);
+            alerta('success', 'Pessoa cadastrada');
         });
     });
+}
+
+function CadastraDependente() {
+
+    var dados = $('#cadastrar-dependente').serialize();
+
+    $.post("adciona-dependente.php", dados, function () {
+        $('#cadastrar-pessoa').each(function () {
+            // this.reset();
+            
+            alerta('success', 'Dependente cadastrado')
+        });
+    });
+    
+
+}
+
+function alerta(tipo, msg) {
+    $("#alerta").attr('class', 'alert alert-'+tipo+' rounded').text(msg).fadeIn(0).delay(3000).fadeOut(3000);
 }

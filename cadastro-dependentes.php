@@ -27,11 +27,12 @@ atualizaQtdDependentes($conexao, $pessoa, $qtdDependentes);
     
     if($qtdDependentes < 3 || $qtdDependentes == 0){
     ?>
-        <form action="adciona-dependente.php" method="post">
+        <form id="cadastrar-dependente">
             <input type="hidden" name="idPessoa" value="<?=$pessoa->getId()?>">
             <?php require_once("formularios/formulario-dependente.php"); ?>
-            <button class="btn btn-primary" type="submit">Cadastrar</button>
+            <button class="btn btn-primary" id="btn-salvar-dependente" type="submit">Cadastrar</button>
         </form>
+        <div id="alerta" class="container"></div>
     <?php }else{ ?>
         <p>Permitido apenas 3 dependentes por pessoa.</p>
         <p>Para cadastrar um novo exclua um existente.</p>
