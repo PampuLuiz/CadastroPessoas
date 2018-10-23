@@ -34,10 +34,10 @@ require_once("class/pessoa.php");
               </form>
             </td>
             <td>
-              <form class="text-center" action="excluir-dependente.php" method="post">
-                <input type="hidden" name="idDependente" value="<?=$dependente->getId()?>">
-                <input type="hidden" name="idPessoa" value="<?=$dependente->getIdPessoa()?>">
-                <button type="submit" class="btn btn-outline-danger">
+              <form id="excluir-dependente" class="text-center">
+                <input type="hidden" id="idDependente" name="idDependente" value="<?=$dependente->getId()?>">
+                <input type="hidden" id="idPessoa" name="idPessoa" value="<?=$dependente->getIdPessoa()?>">
+                <button type="submit" class="btn btn-outline-danger btn-excluir-dependente">
                   <i class="far fa-trash-alt"></i>
                 </button>
               </form>

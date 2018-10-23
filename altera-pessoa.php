@@ -17,5 +17,5 @@ if(alteraPessoa($conexao, $pessoa)) {
 	$msg = mysqli_error($conexao);
 	$_SESSION["danger"] = "Pessoa não alterada ".$msg;
 }
-header("Location: index.php");
+header("Location: listar-pessoas.php");
 ?>

@@ -16,7 +16,17 @@ $(document).ready(function () {
         } else {
             CadastraDependente();
             window.location.reload();
+            alerta('success', 'Dependente cadastrado');
         }
+    });
+
+    $('.btn-excluir-dependente').click(function (e) {
+        e.preventDefault();
+
+        var dados = $('#excluir-dependente').serialize();
+
+        $.post("excluir-dependente.php", dados);
+        window.location.reload();
     });
 
 });
@@ -38,12 +48,8 @@ function CadastraDependente() {
     var dados = $('#cadastrar-dependente').serialize();
 
     $.post("adciona-dependente.php", dados, function () {
-        $('#cadastrar-pessoa').each(function () {
-            
-            alerta('success', 'Dependente cadastrado')
-        });
+        
     });
-    
 
 }
 
