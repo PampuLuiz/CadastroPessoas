@@ -11,11 +11,12 @@ $(document).ready(function () {
 
     $('#btn-salvar-dependente').click(function (e) {
         e.preventDefault();
-        // if ($('#nome').val() == '' || $('#dtNascimento').val() == '' || $('#dtNascimento').val() == '') {
-        //     alert("Todos campos devem ser preenchidos");
-        // } else {
+        if ($('#nome').val() == '' || $('#dtNascimento').val() == '' || $('#relacao').val() == '') {
+            alert("Todos campos devem ser preenchidos");
+        } else {
             CadastraDependente();
             window.location.reload();
+        }
     });
 
 });
@@ -38,7 +39,6 @@ function CadastraDependente() {
 
     $.post("adciona-dependente.php", dados, function () {
         $('#cadastrar-pessoa').each(function () {
-            // this.reset();
             
             alerta('success', 'Dependente cadastrado')
         });
